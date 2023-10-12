@@ -1,0 +1,222 @@
+// Define variables for commonly used values
+$font-family-playfair: 'Playfair Display';
+$font-family-lucida: 'Lucida Sans';
+$font-family-yeseva: 'Yeseva one';
+$font-family-pacifico: 'Pacifico';
+$font-family-satisfy: 'Satisfy';
+$font-family-yeseva-one: 'Yeseva One';
+$hover-background-color: blue;
+$apply-special-styles: true;// if else feature
+$background-color: blue;
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+//custom properties declaration
+:root {
+  --background-color: #000000;
+  --font-family-yeseva: 'Yeseva One';
+}
+
+// Define mixins for commonly used styles
+
+@mixin center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//interpolation
+@mixin imgN1N2($n){
+  .N#{$n}{
+    height: 400px;
+    width: 400px;
+  }
+//placeholder selectors
+  %border-radius {
+    border-radius: 10px;
+  }
+}
+//for mapping feature
+$font-sizes: ( 
+  small: 20px,
+  medium: 0.9rem,
+  large: 1.2rem,
+  larger: 24px,
+);
+//flex
+// Define colors for columns
+$column-colors: (
+  #3498db, // Column 1 color
+  #e74c3c, // Column 2 color
+  #27ae60, // Column 3 color
+  #f39c12, // Column 4 color
+  #9b59b6  // Column 5 color
+);
+@function bolder($weight: 6) {
+  @return bolder; // You can adjust this to a specific font-weight if needed
+  
+}
+//for loop function in SCSS
+// Customize styles for individual columns
+@for $i from 1 through length($column-colors) {
+  .column:nth-child(#{$i}) {
+    background-color: nth($column-colors, $i);
+    color: white;
+    @extend %border-radius !optional;// Using the placeholder
+    font-weight: bolder(4);
+  }
+}
+
+
+
+body {
+  font-family: $font-family-lucida;
+  font-size: map-get($font-sizes, small);//map feature
+  text-align: center;
+}
+
+h2 {
+  font-family: var(--font-family-yeseva);//custom properties
+}
+//flex2
+/* Define common styles for all columns */
+.column {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+}
+// nested in respected
+#Ambassador {
+  @include flex-center;
+  flex-wrap: wrap;
+
+  h2 {
+    text-align: center;
+    width: 100%;
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    justify-content: space around;
+  }
+
+  .column {
+    flex: 0 1 calc(50% - 20px);
+    margin: 10px;
+
+    img.dhoni {
+      max-width: 100px;
+      @extend %border-radius;
+      height: 150px;
+      width: 100px;
+    }
+
+    img.virat {
+      max-width: 150px;
+      @extend %border-radius;
+      height: 150px;
+      width: 100px;
+    }
+  }
+}
+
+/* Define the row as a flex container */
+.row {
+  @include flex-center;
+}
+
+
+////
+//functions
+
+
+
+
+// Grid styles
+.grid-container {
+
+  @include imgN1N2("1");//interpolation
+  @include imgN1N2("2");
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  //if else feature
+  @if $apply-special-styles {
+    background-color: #ffffff; // Apply a special background color when $apply-special-styles is true
+    color: white;
+  } @else {
+    background-color: #000000; // Apply a different background color when $apply-special-styles is false
+    color: black;
+  }
+}
+
+.grid-item {
+  .image-container {
+    .certificateimg {
+      width: 250px;
+      height: auto;
+      transition: transform 0.5s;
+      text-align: center;
+      @extend %border-radius;
+
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+
+#special-edition {
+  text-align: center;
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    a {
+      display: block;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.N1,
+.N2{
+  padding: 1rem;
+  border-radius: 10%;
+
+  &:hover {
+    transition: transform 0.5s ease-in-out;
+    transform: rotateY(360deg);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

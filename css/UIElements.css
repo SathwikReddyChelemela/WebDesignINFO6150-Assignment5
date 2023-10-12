@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+:root {
+  --background-color: #000000;
+  --font-family-yeseva: "Yeseva One";
+}
+
+.column:nth-child(1) {
+  background-color: #3498db;
+  color: white;
+  font-weight: bolder;
+}
+
+.column:nth-child(2) {
+  background-color: #e74c3c;
+  color: white;
+  font-weight: bolder;
+}
+
+.column:nth-child(3) {
+  background-color: #27ae60;
+  color: white;
+  font-weight: bolder;
+}
+
+.column:nth-child(4) {
+  background-color: #f39c12;
+  color: white;
+  font-weight: bolder;
+}
+
+.column:nth-child(5) {
+  background-color: #9b59b6;
+  color: white;
+  font-weight: bolder;
+}
+
+body {
+  font-family: "Lucida Sans";
+  font-size: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-family: var(--font-family-yeseva);
+}
+
+/* Define common styles for all columns */
+.column {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+}
+.column h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.column p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+#Ambassador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#Ambassador h2 {
+  text-align: center;
+  width: 100%;
+}
+#Ambassador .row {
+  width: 100%;
+  display: flex;
+  justify-content: space around;
+}
+#Ambassador .column {
+  flex: 0 1 calc(50% - 20px);
+  margin: 10px;
+}
+#Ambassador .column img.dhoni {
+  max-width: 100px;
+  height: 150px;
+  width: 100px;
+}
+#Ambassador .column img.virat {
+  max-width: 150px;
+  height: 150px;
+  width: 100px;
+}
+
+/* Define the row as a flex container */
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  background-color: #ffffff;
+  color: white;
+}
+.grid-container .N1 {
+  height: 400px;
+  width: 400px;
+}
+.grid-container .grid-item .image-container .certificateimg, .grid-item .image-container .grid-container .certificateimg, .grid-container .column:nth-child(1), .grid-container .column:nth-child(2), .grid-container .column:nth-child(3), .grid-container .column:nth-child(4), .grid-container .column:nth-child(5), .grid-container #Ambassador .column img.dhoni, #Ambassador .column .grid-container img.dhoni, .grid-container #Ambassador .column img.virat, #Ambassador .column .grid-container img.virat {
+  border-radius: 10px;
+}
+.grid-container .N2 {
+  height: 400px;
+  width: 400px;
+}
+.grid-container .grid-item .image-container .certificateimg, .grid-item .image-container .grid-container .certificateimg, .grid-container .column:nth-child(1), .grid-container .column:nth-child(2), .grid-container .column:nth-child(3), .grid-container .column:nth-child(4), .grid-container .column:nth-child(5), .grid-container #Ambassador .column img.dhoni, #Ambassador .column .grid-container img.dhoni, .grid-container #Ambassador .column img.virat, #Ambassador .column .grid-container img.virat {
+  border-radius: 10px;
+}
+
+.grid-item .image-container .certificateimg {
+  width: 250px;
+  height: auto;
+  transition: transform 0.5s;
+  text-align: center;
+}
+.grid-item .image-container .certificateimg:hover {
+  transform: scale(1.5);
+}
+
+#special-edition {
+  text-align: center;
+}
+#special-edition h2 {
+  font-size: 24px;
+}
+#special-edition .grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+#special-edition .grid-container a {
+  display: block;
+  text-align: center;
+}
+#special-edition .grid-container img {
+  max-width: 100%;
+}
+
+.N1,
+.N2 {
+  padding: 1rem;
+  border-radius: 10%;
+}
+.N1:hover,
+.N2:hover {
+  transition: transform 0.5s ease-in-out;
+  transform: rotateY(360deg);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  background-color: var(--background-color);
+  color: #fff;
+  width: auto;
+  text-align: center;
+  margin: 0 auto;
+  font-family: "Playfair Display";
+  padding: 1rem;
+}
+header #favi {
+  height: auto;
+  width: 300px;
+  padding-top: 5px;
+}
+
+html, body, h2 {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: "Playfair Display";
+}
+
+summary {
+  background-color: #fff;
+  width: 83%;
+  margin: 10px;
+  padding: 15px;
+  height: 90px;
+  border: 1px solid rgb(14, 13, 13);
+  text-align: justify;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #61677A;
+  font-family: "Playfair Display";
+  border-radius: 10px;
+  position: absolute;
+  height: 100%;
+  overflow: auto;
+}
+.sidebar a {
+  display: block;
+  color: rgb(255, 255, 255);
+  padding: 16px;
+  text-decoration: none;
+}
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.sidebar a:hover:not(.active) {
+  background-color: #D8D9DA;
+  color: #61677A;
+}
+
+@media screen and (max-width: 1500px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {
+    float: left;
+  }
+}
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+footer {
+  background-color: var(--background-color);
+  color: #fff;
+  text-align: center;
+}
+
+#tailor {
+  height: 800px;
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+#Tailor {
+  text-align: center;
+}
+#Tailor h2 {
+  font-size: 24px;
+}
+#Tailor form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+#Tailor form label {
+  font-weight: bold;
+  margin: 10px 0;
+}
+#Tailor form input[type=text],
+#Tailor form input[type=email],
+#Tailor form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#Tailor form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  transition: blue 0.3s, color 0.3s;
+  margin-top: 10px;
+}
+#Tailor form button:hover {
+  background-color: blue;
+}
+#Tailor form button:hover {
+  background-color: #2772a2;
+}/*# sourceMappingURL=UIElements.css.map */

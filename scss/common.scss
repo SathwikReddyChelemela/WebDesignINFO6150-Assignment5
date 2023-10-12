@@ -1,0 +1,95 @@
+@import 'features.scss';//import feature
+
+
+// Header styles
+header {
+  background-color: var(--background-color);//custom properties
+  color: #fff;
+  width: auto;
+  @include center;
+  font-family: $font-family-playfair;
+  padding: 1rem;
+
+  #favi {
+    height: auto;
+    width: 300px;
+    padding-top: 5px;
+  }
+}
+// Define global styles
+html, body, h2 {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: $font-family-playfair;
+}
+// Summary styles
+summary {
+  background-color: #fff;
+  width: 83%;
+  margin: 10px;
+  padding: 15px;
+  height: 90px;
+  border: 1px solid rgb(14, 13, 13);
+  text-align: justify;
+  border-radius: 10px;
+  overflow: auto;
+}
+// Sidebar styles
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #61677A;
+  font-family: $font-family-playfair;
+  border-radius: 10px;
+  position: absolute;
+  height: 100%;
+  overflow: auto;
+
+  a {
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 16px;
+    text-decoration: none;
+
+    &.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    &:hover:not(.active) {
+      background-color: #D8D9DA;
+      color: #61677A;
+    }
+  }
+}
+
+// Media queries
+@media screen and (max-width: 1500px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    a {
+      float: left;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+// Footer styles
+footer {
+  background-color: var(--background-color);//custom properties
+  color: #fff;
+  text-align: center;
+}
+
+

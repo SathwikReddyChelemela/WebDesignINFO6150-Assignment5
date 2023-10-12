@@ -1,0 +1,72 @@
+
+@import 'common.scss'; //import feature
+// UI Elements Styles
+
+  @mixin button($background-color, $hover-background-color) {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  
+    &:hover {
+      background-color: $hover-background-color;
+    }
+  }
+  @mixin center {
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  @mixin border-radius($radius) {
+    border-radius: $radius;
+  }
+  #tailor{
+    height: 800px;
+    width:  400px;
+    @include center;
+    @include border-radius(10px);
+  }
+  
+
+  #Tailor {
+    text-align: center;
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 400px;
+      margin: 0 auto;
+  
+      label {
+        font-weight: bold;
+        margin: 10px 0;
+      }
+  
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+  
+      button {
+        @include button($background-color, $hover-background-color);
+        cursor: pointer;
+        transition: $background-color 0.3s, color 0.3s;
+        margin-top: 10px;
+  
+        &:hover {
+          background-color: #2772a2;
+        }
+      }
+    }
+  }
